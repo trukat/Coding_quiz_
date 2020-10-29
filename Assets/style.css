@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@100&display=swap');
+
+body {
+    background-color: purple;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Grandstander', cursive;
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+    justify-content: center;
+}
+
+.container-fluid {
+    margin-top: 100px;
+    width: 500px;
+    height: 500px;
+}
+
+.panel-body {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+button {
+    margin-top: 25px;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#timer {
+    color: black;
+    float: right;
+}
+
+
