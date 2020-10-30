@@ -32,12 +32,13 @@ h1 {
 h2 {
     text-align: center;
     color: white;
+    margin-top: 45px;
 }
 
 .center {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -56,11 +57,4 @@ button {
 
 .hide {
     display: none;
-}
-
-#choices {
-    top: 200px;
-    padding: 10px;
-    margin-top: 25px;
-    margin-left: 425px;
 }

@@ -2,22 +2,22 @@ var myQuestions = [
     {
         question: "Inside which HTML element do we put the JavaScript?",
         choices: ["<script>", "<scripting>", "<js>", "<javascript>"],
-        correctAnswer: "A"
+        correctAnswer: ["<script>"]
     },
     {
         question: "How does a FOR loop start?",
         choices: ["for(i<=5; i++)", "for i = 1 to 5", "for (i=0; i <=5)", "for(i=0; i <=5; i++)"],
-        correctAnswer: "D"
+        correctAnswer: ["for(i=0; i <=5; i++)"]
     },
     {
         question: "How can you add a comment in JavaScript?",
         choices: ["//This is a comment", "<!--This is a comment-->", "'This is a comment'", "${This is a comment}"],
-        correctAnswer: "A"
+        correctAnswer: ["//This is a comment"]
     },
     {
         question: "Which operator is used to assign a value to a variable?",
         choices: ["*", "-", "=", "X"],
-        correctAnswer: "C"
+        correctAnswer: ["="]
     }]
 
 var currentQuestionIndex = 0
@@ -29,6 +29,19 @@ var startScreenEl = document.querySelector("#quiz")
 var quizQuestions = document.querySelector("#questions")
 var questionTitle = document.querySelector("#question-title")
 var choicesEl = document.querySelector("#choices")
+
+
+function getQuestions() {
+    var currentQuestion = myQuestions[currentQuestionIndex]
+    questionTitle.textContent = currentQuestion.question
+    currentQuestion.choices.forEach(function(choice, i) {
+        var choiceButton = document.createElement("button")
+        choiceButton.setAttribute("class", "choice")
+        choiceButton.setAttribute("value", choice)
+        choiceButton.textContent = choice
+        choicesEl.appendChild(choiceButton)
+    })
+}
 
 
 function startQuiz() {
@@ -46,17 +59,17 @@ function startQuiz() {
       getQuestions()
 }
 
-function getQuestions() {
-    var currentQuestion = myQuestions[currentQuestionIndex]
-    questionTitle.textContent = currentQuestion.question
-    currentQuestion.choices.forEach(function(choice, i) {
-        var choiceButton = document.createElement("button")
-        choiceButton.setAttribute("class", "choice")
-        choiceButton.setAttribute("value", choice)
-        choiceButton.textContent = choice
-        choicesEl.appendChild(choiceButton)
-    })
-}
+choices.addEventListener("click", function() {
+    if(choicesEl === myQuestions[currentQuestionIndex].correctAnswer) {
+        console.log("This is the right answer.")
+        currentQuestionIndex++
+        getQuestions()
+    }   else {
+        console.log("This is wrong answer.")
+        timerCount -= 10
+    }
+})
+
 
 
 
